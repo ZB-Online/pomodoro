@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weekly Todos</title>
     <link rel="stylesheet" href="./style.css" />
-    <script defer src="app.js"></script>
+    <script defer type="module" src="./js/todos/app.js"></script>
   </head>
   <body>
-    <form action="" class="todo-form">
-      <input type="text" name="" id="" placeholder="Add Todo" />
+    <form action="post" class="todo-form">
+      <input type="text" class="todo-input" name="" id="" placeholder="Add Todo" />
       <select class="select-day" name="" id="">
+        <option disabled value="sun">일</option>
         <option disabled value="mon">월</option>
         <option value="tue">화</option>
         <option value="wed">수</option>
         <option value="thu">목</option>
         <option value="fri">금</option>
         <option value="sat">토</option>
-        <option value="sun">일</option>
       </select>
     </form>
     <div class="app-container">
