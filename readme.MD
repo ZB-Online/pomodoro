@@ -8,7 +8,8 @@
 type: Subject
 ```
 
-###The Type  
+### The Type
+
 The type is contained within the title and can be one of these types:
 
 - feat: A new feature
