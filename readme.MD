@@ -20,4 +20,4 @@ The type is contained within the title and can be one of these types:
 - test: Adding tests, refactoring test; no production code change
 - chore: Updating build tasks, package manager configs, etc; no production code change
 
-### Reference: https://udacity.github.io/git-styleguide/
+Reference: https://udacity.github.io/git-styleguide/
