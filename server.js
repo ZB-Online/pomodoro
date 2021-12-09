@@ -12,7 +12,6 @@ let todos = [
   { id: 2, content: 'B', completed: true, day: 'mon' },
   { id: 1, content: 'C', completed: false, day: 'mon' },
   { id: 3, content: 'D', completed: false, day: 'tue' },
-  { id: 2, content: 'E', completed: true, day: 'tue' },
   { id: 1, content: 'F', completed: false, day: 'tue' },
   { id: 3, content: '1', completed: false, day: 'wed' },
   { id: 2, content: '2', completed: true, day: 'wed' },

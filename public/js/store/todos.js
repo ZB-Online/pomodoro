@@ -41,7 +41,6 @@ const toggleTodo = async (day, id) => {
   const toggledTodo = store().map(week => (week[day].id === +id ? { ...week, week[day]: [...week[day], week[day].completed: !todo.completed] } : todo));
   //const toggledTodo = store().map(todo => todo.id === +id ?  : todo )
   //store().map(week => week[day].id === +id ?)
-  // todos객체 > 요일객체 > 배열
   store(toggledTodo);
 
   const { completed } = store().find(todo => todo.id === +id);
