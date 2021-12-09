@@ -22,15 +22,14 @@ const fetchTodos = async () => {
   }
 };
 
-const generateId = day => Math.max(...store()[day].map(todo => todo.id), 0) + 1;
+const generateId = () => Math.max(...store().map(todo => todo.id), 0) + 1;
 
-const addTodo = async (day, content) => {
+const addTodo = async ( content) => {
   try {
     const { data: todos } = await ajax.post('/todos', {
-      id: generateId(day),
+      id: generateId(),
       content,
       completed: false,
-      day,
     });
     store(todos);
   } catch (e) {
@@ -39,9 +38,9 @@ const addTodo = async (day, content) => {
 };
 
 const toggleTodo = async (day, id) => {
-  // 수정합니다!!!!!!!!!!!
   const toggledTodo = store().map(week => (week[day].id === +id ? { ...week, week[day]: [...week[day], week[day].completed: !todo.completed] } : todo));
-  store().map(week => week[day].id === +id ?)
+  //const toggledTodo = store().map(todo => todo.id === +id ?  : todo )
+  //store().map(week => week[day].id === +id ?)
   // todos객체 > 요일객체 > 배열
   store(toggledTodo);
 
@@ -55,22 +54,22 @@ const toggleTodo = async (day, id) => {
   }
 };
 
-const updateTodoContent = async (day, id, content) => {
-  const updatedTodo = store().map(todo => (todo[day].id === +id ? { ...todo, content } : todo));
+const updateTodoContent = async ( id, content) => {
+  const updatedTodo = store().map(todo => (todo.id === +id ? { ...todo, content } : todo));
   store(updatedTodo);
   try {
-    const { data: todos } = await ajax.patch(`/todos/${day}/${id}`, { content });
+    const { data: todos } = await ajax.patch(`/todos/${id}`, { content });
     store(todos);
   } catch (e) {
     console.error(e);
   }
 };
 
-const removeTodo = async (day, id) => {
+const removeTodo = async ( id) => {
   // store.todos = store.todos.filter(todo => todo.id !== +id);
 
   try {
-    const { data: todos } = await ajax.delete(`/todos/${day}/${id}`);
+    const { data: todos } = await ajax.delete(`/todos/${id}`);
     store(todos);
   } catch (e) {
     console.error(e);
